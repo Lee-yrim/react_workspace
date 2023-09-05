@@ -1,0 +1,7 @@
+1. npm install redux react-redux  설치
+npm install @reduxjs/toolkit react-redux 얘도설치
+2. useSelector : 리덕스의 state를 조회
+3. useDispatch : 생성한 action을 useDispatch 를 통해 발생시킨다. 
+    https://react-redux.js.org/ 들어가서 봣음
+
+

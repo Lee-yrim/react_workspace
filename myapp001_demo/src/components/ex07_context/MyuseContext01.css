@@ -1,0 +1,10 @@
+/* 이 css를 같은이름의 js파일에 적용할거면 이름을 같에 설정해주는게 일반적임 */
+div#page div {
+  border: 1px solid black;
+  margin: 10px;
+}
+
+div.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
