@@ -4,22 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAction } from "../reduxs/action";
 
 const Todo4 = () => {
+  const todos = useSelector((todos) => todos);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getAction(dispatch);
+  }, []);
+
   return (
     <>
-      {todos.map((todo) => {
-        const todos = useSelector((todos) => todos);
-        const dispatch = useDispatch();
-
-        useEffect(() => {
-          getAction(dispatch);
-        }, []);
-
-        return (
-          <div className="todo" key={todo.id}>
-            <Label4 todo={todo} />
-          </div>
-        );
-      })}
+      {todos
+        ? todos.map((todo) => {
+            return (
+              <div className="todo" key={todo.id}>
+                <Label4 todo={todo} />
+              </div>
+            );
+          })
+        : null}
     </>
   );
 };
