@@ -3,22 +3,19 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 import App1 from "./App1";
-import App2 from "./App2";
-import App3 from "./App3";
-import App4 from "./App4";
-import App5 from "./App5";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    {/* <App1 /> */}
-    {/* <App2 /> */}
-    {/* <App3 /> */}
-    {/* <App4 /> */}
-    <App5 />
-  </React.StrictMode>
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>
+
+  //라우터를 할때는 브라우즈라우터로 감ㅆ싸줘야함
+  <BrowserRouter>
+    <App1 />
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
