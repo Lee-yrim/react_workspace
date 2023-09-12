@@ -23,10 +23,17 @@ function App1() {
   ];
 
   const [todos, setTodos] = useState([...boardList]);
+  // todos 정의는 여기서 해준거임
+  // 보드리스트에 잇느거를 복사해와서 그거를 초기값으로 두고 setTodos를 통해서 todos를 업데이트 해줌
+
   const [input, setInput] = useState("");
   //아래 폼태그안에 input 태그 쓰려고하면 이거 해줘야 박스 나타남
+
+  //여기 id는 위에 보드리스트에서 정의된 id임
   const updateTodo = (id) => {
     setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: todo.completed === 1 ? 0 : 1 } : todo)));
+    // map함수를 사용하여 순회하면서 각 항목을 검사하고 변경된 내용으로 새로운 배열을 생성함
+    //map 함수 내에서 조건문을 사용하여 현재 항목의 id가 매개변수로 받은 id와 일치하는 경우 해당 항목을 업데이트하고, 일치하지 않는 경우 그대로 반환합니다.
     // 한번누르면 줄그어지고 그거다시누르면 줄 사라지게 하는 함수
     // 할일 다하면 줄긋는 그거
     // 3항조건문? 이라해야하나 그거를 이중으로 사용함

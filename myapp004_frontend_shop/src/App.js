@@ -11,6 +11,8 @@ import BoardList from "./components/board/BoardList";
 import BoardView from "./components/board/BoardView";
 import BoardWrite from "./components/board/BoardWrite";
 import BoardUpdate from "./components/board/BoardUpdate";
+import EmpList from "./components/emp/EmpList";
+import PrivateRoute from "./access/PrivateRoute";
 
 function App() {
   return (
@@ -19,16 +21,29 @@ function App() {
       <Routes>
         <Route path="/" element={<BaseLayout />}>
           <Route index element={<Home />} />
-          <Route path="joinadd" element={<JoinAdd />} />
+          {/* <Route path="joinadd" element={<JoinAdd />} />
           <Route path="login" element={<Login />} />
           <Route path="logout" element={<Logout />} />
           <Route path="editinfo" element={<EditInfo />} />
           <Route path="board/list/:currentPage" element={<BoardList />} />
           <Route path="board/view/:num" element={<BoardView />} />
           <Route path="board/write" element={<BoardWrite />} />
-          <Route path="board/write/:num" element={<BoardWrite />} />
+          <Route path="board/write/:num" element={<BoardWrite />} /> */}
           {/* 답변글 */}
-          <Route path="board/update/:num" element={<BoardUpdate />} />
+          {/* <Route path="board/update/:num" element={<BoardUpdate />} /> */}
+
+          {/* 혜륌 */}
+          <Route path="joinadd" element={<PrivateRoute isAuth={false} RouteComponent={JoinAdd} />} />
+          <Route path="login" element={<PrivateRoute isAuth={false} RouteComponent={Login} />} />
+          <Route path="logout" element={<PrivateRoute isAuth={true} RouteComponent={Logout} />} />
+          <Route path="editinfo" element={<PrivateRoute isAuth={true} RouteComponent={EditInfo} />} />
+          {/* BoardList에 있는 currentPage라는 변수 */}
+          <Route path="board/list/:currentPage" element={<PrivateRoute isAuth={false} RouteComponent={BoardList} />} />
+          <Route path="board/view/:num" element={<PrivateRoute isAuth={true} RouteComponent={BoardView} />} />
+          <Route path="board/write" element={<PrivateRoute isAuth={true} RouteComponent={BoardWrite} />} />
+          <Route path="board/write/:num" element={<PrivateRoute isAuth={true} RouteComponent={BoardWrite} />} />
+          <Route path="board/update/:num" element={<PrivateRoute isAuth={true} RouteComponent={BoardUpdate} />} />
+          <Route path="emp/:currentPage" element={<PrivateRoute isAuth={false} RouteComponent={EmpList} />} />
         </Route>
       </Routes>
     </div>
