@@ -3,6 +3,7 @@ import React from "react";
 const Label1 = (props) => {
   //component로 함수를 사용할때는 함수가 대문자 여야함!!!!!!!!!!!!!!!!
   const { todo, updateTodo, deleteTodo } = props;
+  
   return (
     <>
       <label className={todo.completed === 1 ? "completed" : null} onClick={() => updateTodo(todo.id)}>

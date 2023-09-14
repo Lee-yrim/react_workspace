@@ -32,6 +32,7 @@ function App1() {
   //여기 id는 위에 보드리스트에서 정의된 id임
   const updateTodo = (id) => {
     setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: todo.completed === 1 ? 0 : 1 } : todo)));
+    //completed: todo.completed === 1 ? 0 : 1 뜻 ==> todo.completed가 1이면 0으로 하고 1이아니면 1로 하는데 그거를 completed에 저장하는거야
     // map함수를 사용하여 순회하면서 각 항목을 검사하고 변경된 내용으로 새로운 배열을 생성함
     //map 함수 내에서 조건문을 사용하여 현재 항목의 id가 매개변수로 받은 id와 일치하는 경우 해당 항목을 업데이트하고, 일치하지 않는 경우 그대로 반환합니다.
     // 한번누르면 줄그어지고 그거다시누르면 줄 사라지게 하는 함수
