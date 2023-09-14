@@ -23,15 +23,11 @@ const BoardView = () => {
   }, [dispatch, num]);
 
   const handleDownload = async () => {
-    const boardFile = await dispatch(
-      boardActions.getBoardDownload(boardDetail.upload, config)
-    );
+    const boardFile = await dispatch(boardActions.getBoardDownload(boardDetail.upload, config));
 
     // await dispatch(boardActions.getBoardDownload(boardDetail.upload));
 
-    const fileName = boardDetail.upload.substring(
-      boardDetail.upload.indexOf("_") + 1
-    );
+    const fileName = boardDetail.upload.substring(boardDetail.upload.indexOf("_") + 1);
     console.log(fileName);
 
     const url = window.URL.createObjectURL(new Blob([boardFile]), {
@@ -60,11 +56,7 @@ const BoardView = () => {
         <tbody>
           <tr>
             <th width="20%">글쓴이</th>
-            <td>
-              {boardDetail["membersDTO"]
-                ? boardDetail["membersDTO"]["memberName"]
-                : null}
-            </td>
+            <td>{boardDetail["membersDTO"] ? boardDetail["membersDTO"]["memberName"] : null}</td>
 
             <th width="20%">조회수</th>
             <td>{boardDetail.readcount}</td>
@@ -90,13 +82,7 @@ const BoardView = () => {
           <tr>
             <th>파일</th>
             <td colSpan="3">
-              <button onClick={handleDownload}>
-                {boardDetail.upload
-                  ? boardDetail.upload.substring(
-                      boardDetail.upload.indexOf("_") + 1
-                    )
-                  : null}
-              </button>
+              <button onClick={handleDownload}>{boardDetail.upload ? boardDetail.upload.substring(boardDetail.upload.indexOf("_") + 1) : null}</button>
             </td>
           </tr>
         </tbody>
@@ -109,13 +95,12 @@ const BoardView = () => {
         답변
       </Link>
       &nbsp;
-      {localStorage.getItem("memberEmail") ===
-        (boardDetail["memberEmail"] && boardDetail["memberEmail"]) && (
+      {boardDetail["membersDTO"] && localStorage.getItem("memberEmail") === boardDetail["membersDTO"]["memberEmail"] && (
         <>
           <Link className="btn btn-primary" to={`/board/update/${num}`}>
             수정
           </Link>
-          &nbsp;
+
           <button className="btn btn-primary" onClick={handleDelete}>
             삭제
           </button>

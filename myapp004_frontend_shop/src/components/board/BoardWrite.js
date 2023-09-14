@@ -45,6 +45,7 @@ const BoardWrite = () => {
     formData.append("subject", subject);
     formData.append("content", content);
     formData.append("memberEmail", localStorage.getItem("memberEmail"));
+    formData.append("memberName", localStorage.getItem("memberName"));
 
     console.log("filename:", filename);
     if (filename != null) formData.append("filename", filename);
