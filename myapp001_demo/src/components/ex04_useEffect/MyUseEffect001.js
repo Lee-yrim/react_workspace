@@ -57,21 +57,12 @@ const MyUseEffect001 = () => {
     };
     return handleCleanup();
   }, [name]);
+  //name 변수에 의존 / 네임이 변경될때마다 콘솔에 멘트 나옴
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="name"
-        value={name}
-        onChange={onChangeName}
-      />
-      <input
-        type="text"
-        placeholder="nickName"
-        value={nickName}
-        onChange={onChangeNickName}
-      />
+      <input type="text" placeholder="name" value={name} onChange={onChangeName} />
+      <input type="text" placeholder="nickName" value={nickName} onChange={onChangeNickName} />
     </div>
   );
 };

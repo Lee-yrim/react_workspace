@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 
 function App() {
   const inputRef = useRef("");
-  // 페이지에서 포커스를 주기위한거래
+  // 페이지에서 포커스를 주기위한거래 / 포커스를 준다는뜻이 뭐냐면... 대충 그냥 키보드 입력 받을수있게 해주는 그런...?
   const wrap = {
     width: "500px",
     border: "1px solid black",

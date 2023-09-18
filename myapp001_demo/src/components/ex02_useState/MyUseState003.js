@@ -21,7 +21,7 @@ const MyUseState003 = () => {
     setNames([...names, input]); //이렇게 하면 6줄에서 정의한 names의 값을 복사해온거임 점 세개
     // 이렇게 복사해오면 고수여진구송중기 안없어지고 홍길동 추가됨
     // setNames([input, ...names]); //이렇게 순서를 바꾸면 새로 입력한 값이 맨 위로 출력됨
-    setInput(""); //초기화시켜주는거임 근데 딱히 없어도 초기화는 되는듯?
+    setInput(""); // input 칸에 내가 썼던게 리셋되는거임
   };
   return (
     <div>
