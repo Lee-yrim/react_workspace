@@ -26,7 +26,7 @@ function App5() {
     <div className="App" style={wrap}>
       <h1>TODO LIST</h1>
 
-      <Provider store={store}>                                                                                                                                                                                                                                                                                            
+      <Provider store={store}>
         {/* store.js 등록시킨거임 */}
         <Input4 />
         <Todo4 />

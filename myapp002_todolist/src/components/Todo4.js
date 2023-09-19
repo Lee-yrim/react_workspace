@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAction } from "../toolkit/todo_action";
 // import { getAction } from "../reduxs/action";
 
-//todo는 라벨에 정의돼잇고 todos는 투두에 정의돼있음
 const Todo4 = () => {
   // const todos = useSelector((state) => state);
   const todos = useSelector((state) => state.todos.list);

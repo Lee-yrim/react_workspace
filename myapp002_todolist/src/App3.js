@@ -21,7 +21,6 @@ function App3() {
 
   const updateTodo = async (id) => {
     let completed = todos.filter((todo) => todo.id === id)[0].completed;
-    //filter의 역할이 뭐엿지?
     await axios
       .put(`/todo/${id}/${completed}`)
       .then((response) => {

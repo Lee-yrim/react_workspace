@@ -7,6 +7,7 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     //원래 리듀스에 작성한거를 여기서는 여기다가 정의해준거임
+    //여기 리듀서 객체는 getTodoList라는 액션 유형을 처리하며 해당 액션이 디스패치 될때 실행됨 state.list = action.payload; 이거랑  console.log("state", state.list); 이게 실행됨
     getTodoList(state, action) {
       console.log("action", action);
       //   action.type==='LIST' 여기서는 이거를 안해줘도된대 이유가 뭘까?

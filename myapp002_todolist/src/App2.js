@@ -41,7 +41,8 @@ function App2() {
 
   const updateTodo = async (id) => {
     let completed = todos.filter((todo) => todo.id === id)[0].completed;
-    //filter의 역할이 뭐엿지?
+    //filter의 역할 : 주어진 조건과 일치하는 것들을 필터링 해주는거
+    // todo.id가 주어진 id값과 일치하는 항목들을 골라내고 그 결과들 중 0번째 항목의 completed속성을 completed변수에 할당
     await axios
       .put(`/todo/${id}/${completed}`)
       //put 안에는 스프링가서 그 각 매핑 뒤에 형식있잖아 그거랑 같게해줘야함
@@ -94,8 +95,9 @@ function App2() {
 
   const getTodos = async () => {
     await axios
-      .get("/todo/all")
+      .get("/todo/all") //서버에 get요청을 보내는부분
       .then((response) => {
+        // get요청 성공하면 then부분 실행
         console.log(response);
         setTodos(response.data);
       })
@@ -120,7 +122,8 @@ function App2() {
     <div className="App" style={wrap}>
       <h1>TODO LIST</h1>
       <Input2 insertTodo={insertTodo} input={input} handleChangeText={handleChangeText} inputRef={inputRef} />
-
+      {/* 윗줄 형식이 무슨 말이냐면 Input2컴포넌트를 사용할건데 거기에 props를 Input2컴포넌트에 전달하고 있는거임 */}
+      {/* insertTodo : 칸에 입력된 내용을 처리하고 다루기 위해  */}
       <Todo2 todos={todos} updateTodo={updateTodo} deleteTodo={deleteTodo} />
     </div>
   );

@@ -12,11 +12,11 @@ import App5 from "./App5";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
     {/* <App1 /> */}
     {/* <App2 /> */}
     {/* <App3 /> */}
-    {/* <App4 /> */}
+    <App4 />
     {/* <App5 /> */}
   </React.StrictMode>
 );
