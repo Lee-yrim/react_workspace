@@ -30,7 +30,10 @@ Dispatch: 액션을 Redux store로 보내는 함수입니다. dispatch 함수를
   }, []);
 
   const boardList = useSelector((state) => state.board.boardList);
+  //state.board.boardList라는 거는 store.js에서 정의된 board와 board_reducer에 있는 보드리스트를 합쳐서 나온거임
+
   const pv = useSelector((state) => (state.board.pv ? state.board.pv : { currentPage: 1 }));
+  //얘또한....
 
   return (
     <div>
@@ -59,6 +62,8 @@ Dispatch: 액션을 Redux store로 보내는 함수입니다. dispatch 함수를
           {boardList &&
             boardList.map((board) => {
               return <TableRow board={board} key={board.num} />;
+              //보드리스트 배열을 map함수를 통해서 순회하는 부분
+              //반복해서 보드리스트의 각 요소를 TableRow로 렌더링 해주는거
             })}
         </tbody>
       </table>
