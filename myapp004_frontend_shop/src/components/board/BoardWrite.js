@@ -65,7 +65,7 @@ const BoardWrite = () => {
       },
     };
 
-    //console.log(localStorage.getItem('Authorization'));
+    //console.log(localStorage.getItem('Author  zation'));
     await dispatch(boardActions.getBoardWrite(formData, config));
 
     setInputs({

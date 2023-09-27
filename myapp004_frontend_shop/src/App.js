@@ -38,6 +38,7 @@ function App() {
           <Route path="logout" element={<PrivateRoute isAuth={true} RouteComponent={Logout} />} />
           <Route path="editinfo" element={<PrivateRoute isAuth={true} RouteComponent={EditInfo} />} />
           {/* BoardList에 있는 currentPage라는 변수 */}
+          {/* privateroute를 트루로 두면 로그인을 해야 접속가능한 페이지고 펄스로 두면 안해도 들어갈수 잇음 */}
           <Route path="board/list/:currentPage" element={<PrivateRoute isAuth={false} RouteComponent={BoardList} />} />
           <Route path="board/view/:num" element={<PrivateRoute isAuth={true} RouteComponent={BoardView} />} />
           <Route path="board/write" element={<PrivateRoute isAuth={true} RouteComponent={BoardWrite} />} />
