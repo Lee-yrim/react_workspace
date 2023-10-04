@@ -17,18 +17,14 @@ function getBoardList(currentPage) {
 
 function getBoardDetail(num, config) {
   return async (dispatch) => {
-    const data = await axios
-      .get(`/board/view/${num}`, config)
-      .then((response) => response.data);
+    const data = await axios.get(`/board/view/${num}`, config).then((response) => response.data);
     dispatch(boardReducers.getBoardDetail({ data }));
   };
 }
 
 function getBoardWrite(formData, config) {
   return async () => {
-    await axios
-      .post("/board/write", formData, config)
-      .then((response) => response.data);
+    await axios.post("/board/write", formData, config).then((response) => response.data);
   };
 }
 
@@ -51,17 +47,13 @@ function getBoardDownload(upload) {
 
 function getBoardUpdate(formData, config) {
   return async () => {
-    await axios
-      .put(`/board/update`, formData, config)
-      .then((response) => response.data);
+    await axios.put(`/board/update`, formData, config).then((response) => response.data);
   };
 }
 
 function getBoardDelete(num, config) {
   return async (dispatch) => {
-    await axios
-      .delete(`/board/delete/${num}`, config)
-      .then((response) => response.data);
+    await axios.delete(`/board/delete/${num}`, config).then((response) => response.data);
   };
 }
 
